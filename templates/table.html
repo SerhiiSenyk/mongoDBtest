@@ -1,0 +1,19 @@
+<!doctype html>
+<title>Table</title>
+ <h1>Table</h1>
+    <table = class="schedule" border = 5 solid>
+      <tr>
+        <th>self</th>
+        <th>checkpoint_id</th>
+        <th>tag</th>
+        <th>time</th>
+      </tr>
+      {% for event  in events %}
+        <tr>
+          <td>{{ event.self }}</td>
+          <td>{{ event.checkpoint_id }}</td>
+          <td>{{ event.tag }}</td>
+          <td>{{ event.time }}</td>
+        </tr>
+      {% endfor %}
+</table>
