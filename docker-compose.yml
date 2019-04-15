@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: python -u read.py
+    ports:
+      - "8000:8000"
+    #volumes:
+    #  - .:/DB
+    #links:
+      #- db
+    depends_on:
+      - db
+  db:
+    #command: mongod
+    image: mongo
+    ports:
+      - "27017:27017"
+    # container_name: "mongodb"
+    # environment:
+    #   - MONGO_DATA_DIR=/usr/data/db
+    #   - MONGO_LOG_DIR=/dev/null
+    # volumes:
+    #   - ./data/db:/usr/data/db
+    # command: mongod --smallfiles --logpath=/dev/null # --quiet
